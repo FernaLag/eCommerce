@@ -7,7 +7,11 @@
         public decimal Preco {get;set;}
         public int QuantidadeDisponivel {get;set;}
 
-   
+        public Produto()
+        {
+            Tamanho = "";
+            Nome = "";
+        }
     }
 
 }
