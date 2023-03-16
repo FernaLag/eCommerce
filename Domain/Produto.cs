@@ -9,8 +9,8 @@
 
         public Produto()
         {
-            Tamanho = "";
             Nome = "";
+            Tamanho = "";
         }
     }
 
