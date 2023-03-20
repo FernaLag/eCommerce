@@ -1,20 +1,20 @@
 namespace Domain
 {
-    public class Usuario
+    public class Cliente
     {
-        public string Nome{get;set;}
+        public string NomeCompleto{get;set;}
         public int Idade{get;set;}
-        public DateTime DataDeNascimento{get;set;}
-        public decimal cpf{get;set;}
-        public string email{get;set;}
+        public DateTime DataNascimento{get;set;}
+        public string CPF{get;set;}
+        public string Email{get;set;}
 
-        public Usuario()
+        public Cliente()
         {
-            Nome = "";
+            NomeCompleto = "";
             Idade = "";
-            DataDeNascimento = "";
-            cpf = "";
-            email = "";
+            DataNascimento = "";
+            CPF = "";
+            Email = "";
         }
 
     }
