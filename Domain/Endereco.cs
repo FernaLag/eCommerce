@@ -1,6 +1,8 @@
-﻿namespace Domain
+﻿using Domain.Common;
+
+namespace Domain
 {
-    public class Endereco
+    public class Endereco : BaseDomain
     {
         public string Rua {get;set;}
         public int NumeroCasa {get;set;}
