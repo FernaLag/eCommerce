@@ -9,6 +9,13 @@ namespace Domain
         public string email{get;set;}
 
         public Usuario()
+        {
+            Nome = "";
+            Idade = "";
+            DataDeNascimento = "";
+            cpf = "";
+            email = "";
+        }
 
     }
 
