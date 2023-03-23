@@ -1,9 +1,10 @@
+using Domain.Common;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain
 {
-    public class Cliente
+    public class Cliente : BaseDomainEntity
     {
         public string NomeCompleto { get; set; }
         public int Idade { get; set; }

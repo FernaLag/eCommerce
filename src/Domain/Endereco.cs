@@ -2,7 +2,7 @@
 
 namespace Domain
 {
-    public class Endereco : BaseDomain
+    public class Endereco : BaseDomainEntity
     {
         public string Rua {get;set;}
         public int NumeroCasa {get;set;}
@@ -10,7 +10,6 @@ namespace Domain
         public string CEP {get;set;}
         public string Cidade {get;set;}
         public string Estado {get;set;}
-        
 
         public Endereco()
         {
@@ -22,5 +21,4 @@ namespace Domain
             Estado = "";
         }
     }
-
 }
