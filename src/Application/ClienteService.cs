@@ -1,24 +1,32 @@
 ﻿using Domain;
+using Infrastructure;
 
 namespace Application
 {
     public class ClienteService
     {
-        public void CriaCliente(Cliente cliente)
+        private readonly IClienteRepository _clienteRepository;
+
+        public ClienteService(IClienteRepository clienteRepository)
         {
-            // TDD (Test Driven Development)
-
-            // DDD (Domain Driven Development)
-
-            // Domain
-
-            //Código Application Cria Cliente..
-
-            //Acesso ao Banco (gravar no banco) Projeto Infrastructure (ponte) Projeto Persistence
-
-            //Repositório (método do Banco), pra gravar no banco) retorna se deu bom ou não Projeto Infrastructure (ponte) Project Persistence
-
-            //Retorna pro Front a mensagem de sucesso ou erro. Projeto Front (html/css/javascript)
+            _clienteRepository = clienteRepository;
         }
+        public Cliente CreateCliente(Cliente cliente)
+        {
+            var result = _clienteRepository.Create(cliente);
+            return result;
+        }
+        public Cliente GetCliente(int id)
+        {
+            var cliente = _clienteRepository.Get(id);
+            return cliente;
+        }
+
+        public List<Cliente> GetAll()
+        {
+            return _clienteRepository.GetAll();
+        }
+
+
     }
 }
