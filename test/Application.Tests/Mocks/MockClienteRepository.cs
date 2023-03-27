@@ -1,12 +1,6 @@
 ﻿using Domain;
 using Infrastructure;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Tests.Mocks
 {
@@ -52,11 +46,6 @@ namespace Application.Tests.Mocks
             });
 
             mock.Setup(x => x.GetAll()).Returns(clientes);
-            
-
-
-
-
 
             return mock;
         }

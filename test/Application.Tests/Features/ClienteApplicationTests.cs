@@ -18,7 +18,6 @@ namespace Application.Tests.Features
             clienteService = new ClienteService(mock.Object);
         }
 
-
         [Fact]
         public void GetClienteTest()
         {
@@ -26,6 +25,7 @@ namespace Application.Tests.Features
             result.NomeCompleto.ShouldBe("Ferna");
             result.ShouldBeOfType<Cliente>();
         }
+
         [Fact]
         public void CreateClienteTest()
         {
@@ -38,9 +38,6 @@ namespace Application.Tests.Features
 
             clienteService.CreateCliente(cliente);
             clientes.Count.ShouldBe(4);
-        }
-
-           
+        }           
     }
-
 }

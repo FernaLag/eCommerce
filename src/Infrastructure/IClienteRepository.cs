@@ -8,6 +8,4 @@ namespace Infrastructure
         Cliente Create(Cliente cliente);
         List<Cliente> GetAll();
     }
-
-
 }

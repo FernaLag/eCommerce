@@ -26,7 +26,5 @@ namespace Application
         {
             return _clienteRepository.GetAll();
         }
-
-
     }
 }
