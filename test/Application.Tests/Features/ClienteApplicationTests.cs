@@ -38,6 +38,17 @@ namespace Application.Tests.Features
 
             clienteService.CreateCliente(cliente);
             clientes.Count.ShouldBe(4);
-        }           
+        }
+
+        [Fact]
+        public void DeleteClienteTest()
+        {
+            var clientes = clienteService.GetAll();
+            var clienteExcluir = clientes.Find(x => x.Id == 2);
+            clienteService.Delete(clienteExcluir);
+
+            clientes.Count.ShouldBe(2);
+
+        }
     }
 }

@@ -47,6 +47,11 @@ namespace Application.Tests.Mocks
 
             mock.Setup(x => x.GetAll()).Returns(clientes);
 
+            mock.Setup(x => x.Delete(It.IsAny<Cliente>())).Callback((Cliente cliente) =>
+            {
+                clientes.Remove(cliente);
+            });
+
             return mock;
         }
     }
