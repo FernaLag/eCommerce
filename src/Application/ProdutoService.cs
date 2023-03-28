@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,18 @@ namespace Application
 {
     public class ProdutoService
     {
-        public Produto GetProduto()
+        private readonly IProdutoRepository _produtoRepository;
+        public ProdutoService (IProdutoRepository produtoRepository)
         {
-            Produto produto = new Produto();
-            produto.Nome = "Camiseta";
+            _produtoRepository = produtoRepository;
+        }
+        public Produto GetProduto(int id)
+        {
+            var produto = _produtoRepository.Get(id);
             return produto;
         }
     }
 }
+//Produto produto = new Produto();
+//produto.Nome = "Camiseta";
+//return produto;

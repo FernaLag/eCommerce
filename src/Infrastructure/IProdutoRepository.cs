@@ -9,6 +9,6 @@ namespace Infrastructure
 {
     public interface IProdutoRepository 
     {
-        Produto Get();
+        Produto Get(int id);
     }
 }
