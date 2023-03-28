@@ -7,5 +7,8 @@ namespace Infrastructure
         Cliente Get(int id);
         Cliente Create(Cliente cliente);
         List<Cliente> GetAll();
+
+        void Delete(Cliente cliente);
+        
     }
 }

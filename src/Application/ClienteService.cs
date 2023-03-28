@@ -27,6 +27,9 @@ namespace Application
             return _clienteRepository.GetAll();
         }
 
-
+        public void Delete(Cliente cliente)
+        {
+            _clienteRepository.Delete(cliente);
+        }
     }
 }

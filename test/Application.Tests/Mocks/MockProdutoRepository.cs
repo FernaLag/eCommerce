@@ -1,4 +1,5 @@
-﻿using Moq;
+﻿using Infrastructure;
+using Moq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,10 @@ namespace Application.Tests.Mocks
 {
     public static class MockProdutoRepository
     {
-        public static Mock<IProdutoRepository> GetProdutoRepository()
-        {
+        //public static Mock<IProdutoRepository> GetProdutoRepository()
+        //{
 
-        }
+        //}
 
     }
 }
