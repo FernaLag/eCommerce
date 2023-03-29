@@ -36,7 +36,7 @@ namespace Application.Tests.Mocks
 
             mock.Setup(x => x.Get(It.IsAny<int>())).Returns((int id)  =>
             {
-                return clientes.First(x => x.Id == id);
+                return clientes.Single(x => x.Id == id);
             });
 
             mock.Setup(x => x.Create(It.IsAny<Cliente>())).Returns((Cliente cliente) =>
