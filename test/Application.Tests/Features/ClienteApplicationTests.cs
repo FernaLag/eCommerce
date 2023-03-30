@@ -49,6 +49,21 @@ namespace Application.Tests.Features
         }
 
         [Fact]
+        public void UpdateClienteTest()
+        {
+            var cliente = clienteService.GetCliente(1);
+
+            cliente.NomeCompleto = "Silvio Santos";
+
+            clienteService.UpdateCliente(cliente);
+
+            var clienteAlterado = clienteService.GetCliente(1);
+
+            clienteAlterado.Id.ShouldBe(1);
+            clienteAlterado.NomeCompleto.ShouldBe("Silvio Santos");
+        }
+
+        [Fact]
         public void DeleteClienteTest()
         {
             var clientes = clienteService.GetClienteList();
