@@ -19,6 +19,14 @@ namespace Application.Tests.Features
         }
 
         [Fact]
+        public void GetClienteListTest()
+        {
+            var result = clienteService.GetClienteList();
+            result.Count.ShouldBe(3);
+            result.ShouldBeOfType<List<Cliente>>();
+        }
+
+        [Fact]
         public void GetClienteTest()
         {
             var result = clienteService.GetCliente(3);
@@ -29,7 +37,7 @@ namespace Application.Tests.Features
         [Fact]
         public void CreateClienteTest()
         {
-            var clientes = clienteService.GetAll();
+            var clientes = clienteService.GetClienteList();
             var cliente = new Cliente();
             cliente.Id = 4;
             cliente.NomeCompleto = "Pedro";
@@ -43,12 +51,11 @@ namespace Application.Tests.Features
         [Fact]
         public void DeleteClienteTest()
         {
-            var clientes = clienteService.GetAll();
+            var clientes = clienteService.GetClienteList();
             var clienteExcluir = clientes.Find(x => x.Id == 2);
-            clienteService.Delete(clienteExcluir);
+            clienteService.DeleteCliente(clienteExcluir);
 
             clientes.Count.ShouldBe(2);
-
         }
     }
 }

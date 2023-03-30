@@ -34,6 +34,8 @@ namespace Application.Tests.Mocks
                 }
             };
 
+            mock.Setup(x => x.GetAll()).Returns(clientes);
+
             mock.Setup(x => x.Get(It.IsAny<int>())).Returns((int id)  =>
             {
                 return clientes.Single(x => x.Id == id);
@@ -45,7 +47,11 @@ namespace Application.Tests.Mocks
                 return cliente;
             });
 
-            mock.Setup(x => x.GetAll()).Returns(clientes);
+            mock.Setup(x => x.Update(It.IsAny<Cliente>())).Callback((Cliente clienteAlterado) =>
+            {
+                var cliente = clientes.Single(x => x.Id == clienteAlterado.Id);
+                cliente = clienteAlterado;
+            });
 
             mock.Setup(x => x.Delete(It.IsAny<Cliente>())).Callback((Cliente cliente) =>
             {

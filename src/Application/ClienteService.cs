@@ -11,23 +11,25 @@ namespace Application
         {
             _clienteRepository = clienteRepository;
         }
-        public Cliente CreateCliente(Cliente cliente)
+        public List<Cliente> GetClienteList()
         {
-            var result = _clienteRepository.Create(cliente);
-            return result;
+            return _clienteRepository.GetAll();
         }
         public Cliente GetCliente(int id)
         {
             var cliente = _clienteRepository.Get(id);
             return cliente;
         }
-
-        public List<Cliente> GetAll()
+        public Cliente CreateCliente(Cliente cliente)
         {
-            return _clienteRepository.GetAll();
+            var result = _clienteRepository.Create(cliente);
+            return result;
         }
-
-        public void Delete(Cliente cliente)
+        public void UpdateCliente(Cliente cliente)
+        {
+            _clienteRepository.Update(cliente);
+        }
+        public void DeleteCliente(Cliente cliente)
         {
             _clienteRepository.Delete(cliente);
         }
