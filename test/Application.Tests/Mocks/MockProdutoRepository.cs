@@ -16,7 +16,7 @@ namespace Application.Tests.Mocks
             
         {
             var mock = new Mock<IProdutoRepository>();
-            var produtos = new List<Produto>();
+            var produtos = new List<Produto>()
             {
                 new Produto
                 {
@@ -24,14 +24,25 @@ namespace Application.Tests.Mocks
                     Nome = "Camiseta",
                     Preco = 20,
                     Cor = "Vermelho",
-                };
-            }
+                },
+                new Produto
+                {
+                    Id = 2,
+                    Nome = "Regata",
+                    Preco = 30,
+                    Cor = "Preta",
+                }
+            };
+
+            mock.Setup(x => x.GetList()).Returns(produtos);
 
             mock.Setup(x => x.Get(It.IsAny<int>())).Returns((int id) =>
             {
                 return produtos.Single(x => x.Id == id);
             });
             return mock;
+
+
         } 
         
     }

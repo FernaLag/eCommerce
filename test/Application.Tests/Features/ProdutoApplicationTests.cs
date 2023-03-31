@@ -7,31 +7,37 @@ using Shouldly;
 using System;
 using Xunit;
 
-
-public class ProdutoApplicationTests
+namespace Application.Tests.Features
 {
-    private ProdutoService produtoService;
-    private readonly Mock<IProdutoRepository> mock;
-    
-
-    public ProdutoApplicationTests()
+    public class ProdutoApplicationTests
     {
-        mock = MockProdutoRepository.GetProdutoRepository();
-        produtoService = new ProdutoService(mock.Object);
+        private readonly ProdutoService produtoService;
+        private readonly Mock<IProdutoRepository> mock;
+
+
+        public ProdutoApplicationTests()
+        {
+            mock = MockProdutoRepository.GetProdutoRepository();
+            produtoService = new ProdutoService(mock.Object);
+        }
+
+        [Fact]
+        public void GetProdutoTest()
+        {
+            var result = produtoService.GetProduto(1);
+            result.ShouldBeOfType<Produto>();
+            result.Nome.ShouldBe("Camiseta");
+        }
+
+        [Fact]
+        public void GetProdutoListTest()
+        {
+            var result = produtoService.GetProdutoList();
+            result.Count.ShouldBe(2);
+            result.ShouldBeOfType<List<Produto>>();
+        }
+
+
     }
-
-    [Fact] 
-	public void GetProdutoTest()
-	{
-		var result = produtoService.GetProduto(1);
-		result.ShouldBeOfType<Produto>();
-		result.Nome.ShouldBe("Camiseta");
-	}
-
-
-
-
-
-
 }
 

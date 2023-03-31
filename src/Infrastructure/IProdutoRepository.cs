@@ -10,5 +10,6 @@ namespace Infrastructure
     public interface IProdutoRepository 
     {
         Produto Get(int id);
+        List<Produto> GetList();
     }
 }

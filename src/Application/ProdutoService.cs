@@ -11,7 +11,7 @@ namespace Application
     public class ProdutoService
     {
         private readonly IProdutoRepository _produtoRepository;
-        public ProdutoService (IProdutoRepository produtoRepository)
+        public ProdutoService(IProdutoRepository produtoRepository)
         {
             _produtoRepository = produtoRepository;
         }
@@ -20,6 +20,14 @@ namespace Application
             var produto = _produtoRepository.Get(id);
             return produto;
         }
+        public List<Produto> GetProdutoList()
+        {
+            return _produtoRepository.GetList();
+        }
+        
+
+
+
     }
 }
 //Produto produto = new Produto();
