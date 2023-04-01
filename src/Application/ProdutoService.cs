@@ -24,7 +24,12 @@ namespace Application
         {
             return _produtoRepository.GetList();
         }
-        
+
+        public Produto CreateProduto(Produto produto)
+        {
+            var result = _produtoRepository.Create(produto);
+            return result;
+        }
 
 
 

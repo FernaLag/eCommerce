@@ -37,6 +37,21 @@ namespace Application.Tests.Features
             result.ShouldBeOfType<List<Produto>>();
         }
 
+        [Fact]
+        public void GetCreateProdutoTest()
+        {
+            var produtos = produtoService.GetProdutoList();
+            var produto = new Produto();
+            produto.Id = 3;
+            produto.Nome = "Calca";
+            produto.Cor = "Verde";
+            produto.Preco = 90;
+
+            produtoService.CreateProduto(produto);
+            produtos.Count.ShouldBe(2);
+        }
+
+        [Fact]
 
     }
 }

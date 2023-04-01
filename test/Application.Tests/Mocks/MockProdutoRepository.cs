@@ -42,6 +42,12 @@ namespace Application.Tests.Mocks
             });
             return mock;
 
+            mock.Setup(x => x.Create(It.IsAny<Produto>())).Returns((Produto produto) =>
+            {
+                produtos.Add(produto);
+                return produto;
+            });
+
 
         } 
         

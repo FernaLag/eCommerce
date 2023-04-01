@@ -11,5 +11,6 @@ namespace Infrastructure
     {
         Produto Get(int id);
         List<Produto> GetList();
+        Produto Create(Produto produto);
     }
 }
