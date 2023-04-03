@@ -46,23 +46,25 @@ namespace Application.Tests.Mocks
             {
                 return enderecos.Single(x => x.Id == id);
             });
+
             mock.Setup(x => x.Create(It.IsAny<Endereco>())).Returns((Endereco endereco) =>
             {
                 enderecos.Add(endereco);
                 return endereco;
             });
+
             mock.Setup(x => x.Update(It.IsAny<Endereco>())).Callback((Endereco enderecoAlterado) =>
             {
                 var endereco = enderecos.Single(x => x.Id == enderecoAlterado.Id);
                 endereco = enderecoAlterado;
             });
+
             mock.Setup(x => x.Delete(It.IsAny<Endereco>())).Callback((Endereco endereco) =>
             {
                 enderecos.Remove(endereco);
             });
-            return mock;
 
-            
+            return mock;            
         }
     }
 }

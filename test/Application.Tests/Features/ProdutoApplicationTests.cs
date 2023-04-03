@@ -38,7 +38,7 @@ namespace Application.Tests.Features
         }
 
         [Fact]
-        public void GetCreateProdutoTest()
+        public void CreateProdutoTest()
         {
             var produtos = produtoService.GetProdutoList();
             var produto = new Produto();
@@ -48,11 +48,31 @@ namespace Application.Tests.Features
             produto.Preco = 90;
 
             produtoService.CreateProduto(produto);
-            produtos.Count.ShouldBe(2);
+            produtos.Count.ShouldBe(3);
         }
 
         [Fact]
+       public void UpdateProdutoTest()
+        {
+            var produto = produtoService.GetProduto(1);
+            produto.Nome = "Regata";
+            produtoService.UpdateProduto(produto);
+            var produtoAlterado = produtoService.GetProduto(1);
 
+            produtoAlterado.Id.ShouldBe(1);
+            produtoAlterado.Nome.ShouldBe("Regata");
+
+        }
+
+        [Fact]
+        public void DeleteProdutoTest()
+        {
+            var produtos = produtoService.GetProdutoList();
+            var produtoExcluir = produtos.Find(x => x.Id == 1);
+            produtoService.DeleteProduto(produtoExcluir);
+
+            produtos.Count.ShouldBe(1);
+        }
     }
 }
 
