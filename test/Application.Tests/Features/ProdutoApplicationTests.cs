@@ -52,7 +52,27 @@ namespace Application.Tests.Features
         }
 
         [Fact]
+       public void UpdateProdutoTest()
+        {
+            var produto = produtoService.GetProduto(1);
+            produto.Nome = "Regata";
+            produtoService.UpdateProduto(produto);
+            var produtoAlterado = produtoService.GetProduto(1);
 
+            produtoAlterado.Id.ShouldBe(1);
+            produtoAlterado.Nome.ShouldBe("Regata");
+
+        }
+
+        [Fact]
+        public void DeleteProdutoTest()
+        {
+            var produtos = produtoService.GetProdutoList();
+            var produtoExcluir = produtos.Find(x => x.Id == 1);
+            produtoService.DeleteProduto(produtoExcluir);
+
+            produtos.Count.ShouldBe(1);
+        }
     }
 }
 

@@ -24,11 +24,20 @@ namespace Application
         {
             return _produtoRepository.GetList();
         }
+        public void UpdateProduto(Produto produto)
+        {
+            _produtoRepository.Update(produto);
+        }
 
         public Produto CreateProduto(Produto produto)
         {
             var result = _produtoRepository.Create(produto);
             return result;
+        }
+
+        public void DeleteProduto(Produto produto)
+        {
+            _produtoRepository.Delete(produto);
         }
 
 

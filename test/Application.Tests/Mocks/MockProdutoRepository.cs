@@ -40,7 +40,6 @@ namespace Application.Tests.Mocks
             {
                 return produtos.Single(x => x.Id == id);
             });
-            return mock;
 
             mock.Setup(x => x.Create(It.IsAny<Produto>())).Returns((Produto produto) =>
             {
@@ -48,7 +47,18 @@ namespace Application.Tests.Mocks
                 return produto;
             });
 
+            mock.Setup(x => x.Update(It.IsAny<Produto>())).Callback((Produto ProdutoAlterado) =>
+            {
+                var produto = produtos.Single(x => x.Id == ProdutoAlterado.Id);
+                produto = ProdutoAlterado;
+            });
 
+            mock.Setup(x => x.Delete(It.IsAny<Produto>())).Callback((Produto produto) =>
+            {
+                produtos.Remove(produto);
+            });
+
+            return mock;
         } 
         
     }
