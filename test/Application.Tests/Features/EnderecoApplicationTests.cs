@@ -77,7 +77,7 @@ namespace Application.Tests.Features
             var enderecoExcluir = enderecos.Find(x => x.Id == 2);
             enderecoService.DeleteEndereco(enderecoExcluir);
 
-            enderecos.Count.ShouldBe(2);
+            enderecos.Count.ShouldBe(1);
         }
 
 
