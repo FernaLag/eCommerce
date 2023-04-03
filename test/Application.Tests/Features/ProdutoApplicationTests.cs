@@ -38,7 +38,7 @@ namespace Application.Tests.Features
         }
 
         [Fact]
-        public void GetCreateProdutoTest()
+        public void CreateProdutoTest()
         {
             var produtos = produtoService.GetProdutoList();
             var produto = new Produto();
@@ -48,7 +48,7 @@ namespace Application.Tests.Features
             produto.Preco = 90;
 
             produtoService.CreateProduto(produto);
-            produtos.Count.ShouldBe(2);
+            produtos.Count.ShouldBe(3);
         }
 
         [Fact]

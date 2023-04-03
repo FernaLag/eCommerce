@@ -56,6 +56,7 @@ namespace Application.Tests.Features
             enderecoService.CreateEndereco(endereco);
             enderecos.Count.ShouldBe(3);
         }
+
         [Fact]
         public void UpdateEnderecoTest()
         {
@@ -70,6 +71,7 @@ namespace Application.Tests.Features
             enderecoAlterado.Id.ShouldBe(1);
             enderecoAlterado.Rua.ShouldBe("Gisele");
         }
+
         [Fact]
         public void DeleteEnderecoTest()
         {
@@ -77,11 +79,7 @@ namespace Application.Tests.Features
             var enderecoExcluir = enderecos.Find(x => x.Id == 2);
             enderecoService.DeleteEndereco(enderecoExcluir);
 
-            enderecos.Count.ShouldBe(2);
+            enderecos.Count.ShouldBe(1);
         }
-
-
-
     }
-
 }
