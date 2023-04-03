@@ -13,6 +13,6 @@ namespace Infrastructure
         List<Produto> GetList();
         Produto Create(Produto produto);
         void Update(Produto produto);
-        void Delete(Produto produto);
+        void Delete(Produto produto); 
     }
 }
