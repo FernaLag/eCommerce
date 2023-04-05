@@ -17,7 +17,7 @@ namespace Persistence
         {
             services.AddDbContext<ECommerceDbContext>(options =>
                 options.UseSqlServer(
-                    configuration.GetConnectionString("LeaveManagementConnectionString")));
+                    configuration.GetConnectionString("ECommerceConnectionString")));            
 
             return services;
         }

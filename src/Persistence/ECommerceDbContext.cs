@@ -5,8 +5,7 @@ namespace Persistence
 {
     public class ECommerceDbContext : DbContext
     {
-        public ECommerceDbContext(DbContextOptions<ECommerceDbContext> options)
-         : base(options)
+        public ECommerceDbContext(DbContextOptions options) : base(options)
         {
         }
 
