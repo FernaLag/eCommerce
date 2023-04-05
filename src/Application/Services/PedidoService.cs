@@ -6,17 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application
+namespace Application.Services
 {
     public class PedidoService
     {
         private readonly IPedidoRepository _pedidoRepository;
 
-        public PedidoService (IPedidoRepository pedidoRepository)
+        public PedidoService(IPedidoRepository pedidoRepository)
         {
             _pedidoRepository = pedidoRepository;
         }
-        
+
         public List<Pedido> GetPedidoList()
         {
             return _pedidoRepository.GetAll();
