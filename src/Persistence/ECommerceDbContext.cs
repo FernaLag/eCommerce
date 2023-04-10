@@ -14,6 +14,10 @@ namespace Persistence
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ECommerceDbContext).Assembly);
+
+            modelBuilder.Entity<Produto>()
+                .Property(x => x.Preco)
+                .HasPrecision(10, 2);
         }
 
         public DbSet<Cliente> Clientes { get; set; }
