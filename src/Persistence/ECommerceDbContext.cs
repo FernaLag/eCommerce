@@ -1,21 +1,7 @@
-﻿using Domain;
-using Microsoft.EntityFrameworkCore;
-
-namespace Persistence
+﻿namespace Persistence2
 {
-    public class ECommerceDbContext : DbContext
+    public class Class1
     {
-        public ECommerceDbContext(DbContextOptions options) : base(options)
-        {
-        }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ECommerceDbContext).Assembly);
-        }
-
-        public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<Produto> Produtos { get; set; }
-        public DbSet<Endereco> Enderecos { get; set; }
     }
 }
