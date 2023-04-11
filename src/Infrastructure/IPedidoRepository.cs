@@ -7,13 +7,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure
 {
-    public interface IPedidoRepository
+    public interface IPedidoRepository : IGenericRepository<Pedido>
     {
-        List<Pedido> GetAll();
-        Pedido Get(int id);
-        Pedido Create(Pedido pedido);
-        void Update(Pedido pedido);
-        void Delete(Pedido pedido);
-
     }
 }
