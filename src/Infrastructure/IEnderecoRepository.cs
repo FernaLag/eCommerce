@@ -7,12 +7,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure
 {
-    public interface IEnderecoRepository
+    public interface IEnderecoRepository : IGenericRepository<Endereco>
     {
-        List<Endereco> GetAll();
-        Endereco Get(int id);
-        Endereco Create(Endereco endereco);
-        void Update(Endereco endereco);
-        void Delete(Endereco endereco);
     }
 }
