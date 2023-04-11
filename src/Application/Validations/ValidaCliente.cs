@@ -1,7 +1,7 @@
 ﻿using Domain;
 using Infrastructure;
 
-namespace Application
+namespace Application.Validations
 {
     public class ClienteService
     {
