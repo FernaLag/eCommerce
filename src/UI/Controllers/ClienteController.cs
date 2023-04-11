@@ -11,12 +11,6 @@ namespace UI.Controllers
             return View();
         }
 
-        // GET: ClienteController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
         // GET: ClienteController/Create
         public ActionResult Create()
         {
