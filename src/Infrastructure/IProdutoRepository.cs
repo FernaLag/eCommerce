@@ -1,18 +1,8 @@
 ﻿using Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure
 {
-    public interface IProdutoRepository 
+    public interface IProdutoRepository : IGenericRepository<Produto>
     {
-        Produto Get(int id);
-        List<Produto> GetList();
-        Produto Create(Produto produto);
-        void Update(Produto produto);
-        void Delete(Produto produto); 
     }
 }
