@@ -1,5 +1,5 @@
 ﻿using Domain;
-using Infrastructure;
+using Application.Contracts.Persistence;
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -34,14 +34,14 @@ namespace Application.Tests.Mocks
                 }
             };
 
-            mock.Setup(x => x.GetList()).Returns(produtos);
+            mock.Setup(x => x.GetAll()).Returns(produtos);
 
             mock.Setup(x => x.Get(It.IsAny<int>())).Returns((int id) =>
             {
                 return produtos.Single(x => x.Id == id);
             });
 
-            mock.Setup(x => x.Create(It.IsAny<Produto>())).Returns((Produto produto) =>
+            mock.Setup(x => x.Add(It.IsAny<Produto>())).Returns((Produto produto) =>
             {
                 produtos.Add(produto);
                 return produto;

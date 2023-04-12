@@ -1,5 +1,5 @@
 ﻿using Domain;
-using Infrastructure;
+using Application.Contracts.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +20,9 @@ namespace Application.Services
             var produto = _produtoRepository.Get(id);
             return produto;
         }
-        public List<Produto> GetProdutoList()
+        public IReadOnlyList<Produto> GetProdutoList()
         {
-            return _produtoRepository.GetList();
+            return _produtoRepository.GetAll();
         }
         public void UpdateProduto(Produto produto)
         {
@@ -31,7 +31,7 @@ namespace Application.Services
 
         public Produto CreateProduto(Produto produto)
         {
-            var result = _produtoRepository.Create(produto);
+            var result = _produtoRepository.Add(produto);
             return result;
         }
 

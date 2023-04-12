@@ -1,7 +1,7 @@
 ﻿using Application.Services;
 using Application.Tests.Mocks;
 using Domain;
-using Infrastructure;
+using Application.Contracts.Persistence;
 using Moq;
 using Shouldly;
 using System;
@@ -77,7 +77,7 @@ namespace Application.Tests.Features
         public void DeleteEnderecoTest()
         {
             var enderecos = enderecoService.GetEnderecoList();
-            var enderecoExcluir = enderecos.Find(x => x.Id == 2);
+            var enderecoExcluir = enderecoService.GetEndereco(2);
             enderecoService.DeleteEndereco(enderecoExcluir);
 
             enderecos.Count.ShouldBe(1);

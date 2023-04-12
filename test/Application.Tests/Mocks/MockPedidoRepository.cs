@@ -1,5 +1,5 @@
 ﻿using Domain;
-using Infrastructure;
+using Application.Contracts.Persistence;
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -42,7 +42,7 @@ namespace Application.Tests.Mocks
                 return pedidos.Single(x => x.Id == id);
             });
 
-            mock.Setup(x => x.Create(It.IsAny<Pedido>())).Returns((Pedido pedido) =>
+            mock.Setup(x => x.Add(It.IsAny<Pedido>())).Returns((Pedido pedido) =>
             {
                 pedidos.Add(pedido);
                 return pedido;

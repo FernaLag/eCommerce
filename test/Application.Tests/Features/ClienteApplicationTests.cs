@@ -1,7 +1,7 @@
 ﻿using Application.Services;
 using Application.Tests.Mocks;
 using Domain;
-using Infrastructure;
+using Application.Contracts.Persistence;
 using Moq;
 using Shouldly;
 using Xunit;
@@ -68,7 +68,7 @@ namespace Application.Tests.Features
         public void DeleteClienteTest()
         {
             var clientes = clienteService.GetClienteList();
-            var clienteExcluir = clientes.Find(x => x.Id == 2);
+            var clienteExcluir = clienteService.GetCliente(2);
             clienteService.DeleteCliente(clienteExcluir);
 
             clientes.Count.ShouldBe(2);

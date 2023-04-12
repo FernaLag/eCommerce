@@ -1,5 +1,5 @@
 ﻿using Domain;
-using Infrastructure;
+using Application.Contracts.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,7 @@ namespace Application.Services
         {
             _enderecoRepository = enderecoRepository;
         }
-        public List<Endereco> GetEnderecoList()
+        public IReadOnlyList<Endereco> GetEnderecoList()
         {
             return _enderecoRepository.GetAll();
         }
@@ -27,7 +27,7 @@ namespace Application.Services
         }
         public Endereco CreateEndereco(Endereco endereco)
         {
-            var result = _enderecoRepository.Create(endereco);
+            var result = _enderecoRepository.Add(endereco);
             return result;
         }
         public void UpdateEndereco(Endereco endereco)
