@@ -23,10 +23,6 @@ namespace Application.Services
         }
         public Cliente CreateCliente(Cliente cliente)
         {
-            //erificationException se o clienta já existe..
-
-            //se o usuário tá logado, tem permissão cliente..
-
             var result = _clienteRepository.Add(cliente);
             return result;
         }
