@@ -62,7 +62,7 @@ namespace Persistence.Migrations
                     NomeCompleto = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Idade = table.Column<int>(type: "int", nullable: false),
                     DataNascimento = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CPF = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CPF = table.Column<string>(type: "nvarchar(50)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EnderecoId = table.Column<int>(type: "int", nullable: false),
                     CriadoEm = table.Column<DateTime>(type: "datetime2", nullable: false),
