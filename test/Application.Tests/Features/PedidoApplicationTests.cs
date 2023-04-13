@@ -1,7 +1,7 @@
 ﻿using Application.Services;
 using Application.Tests.Mocks;
 using Domain;
-using Infrastructure;
+using Application.Contracts.Persistence;
 using Moq;
 using Shouldly;
 using System;
@@ -73,7 +73,7 @@ namespace Application.Tests.Features
         public void DeletePedidoTest()
         {
             var pedidos = pedidoService.GetPedidoList();
-            var pedidoExcluir = pedidos.Find(x => x.Id == 2);
+            var pedidoExcluir = pedidoService.GetPedido(2);
             pedidoService.DeletePedido(pedidoExcluir);
         }
     }

@@ -1,5 +1,5 @@
 ﻿using Domain;
-using Infrastructure;
+using Application.Contracts.Persistence;
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -47,7 +47,7 @@ namespace Application.Tests.Mocks
                 return enderecos.Single(x => x.Id == id);
             });
 
-            mock.Setup(x => x.Create(It.IsAny<Endereco>())).Returns((Endereco endereco) =>
+            mock.Setup(x => x.Add(It.IsAny<Endereco>())).Returns((Endereco endereco) =>
             {
                 enderecos.Add(endereco);
                 return endereco;

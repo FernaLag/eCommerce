@@ -1,5 +1,6 @@
 ﻿using Domain;
-using Infrastructure;
+using Application.Contracts.Persistence;
+using System.Security;
 
 namespace Application.Services
 {
@@ -11,7 +12,7 @@ namespace Application.Services
         {
             _clienteRepository = clienteRepository;
         }
-        public List<Cliente> GetClienteList()
+        public IReadOnlyList<Cliente> GetClienteList()
         {
             return _clienteRepository.GetAll();
         }
@@ -22,7 +23,7 @@ namespace Application.Services
         }
         public Cliente CreateCliente(Cliente cliente)
         {
-            var result = _clienteRepository.Create(cliente);
+            var result = _clienteRepository.Add(cliente);
             return result;
         }
         public void UpdateCliente(Cliente cliente)

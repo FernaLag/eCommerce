@@ -1,5 +1,5 @@
 ﻿using Domain;
-using Infrastructure;
+using Application.Contracts.Persistence;
 using Moq;
 
 namespace Application.Tests.Mocks
@@ -41,7 +41,7 @@ namespace Application.Tests.Mocks
                 return clientes.Single(x => x.Id == id);
             });
 
-            mock.Setup(x => x.Create(It.IsAny<Cliente>())).Returns((Cliente cliente) =>
+            mock.Setup(x => x.Add(It.IsAny<Cliente>())).Returns((Cliente cliente) =>
             {
                 clientes.Add(cliente);
                 return cliente;

@@ -1,7 +1,7 @@
 ﻿using Application.Services;
 using Application.Tests.Mocks;
 using Domain;
-using Infrastructure;
+using Application.Contracts.Persistence;
 using Moq;
 using Shouldly;
 using System;
@@ -68,7 +68,7 @@ namespace Application.Tests.Features
         public void DeleteProdutoTest()
         {
             var produtos = produtoService.GetProdutoList();
-            var produtoExcluir = produtos.Find(x => x.Id == 1);
+            var produtoExcluir = produtoService.GetProduto(1);
             produtoService.DeleteProduto(produtoExcluir);
 
             produtos.Count.ShouldBe(1);

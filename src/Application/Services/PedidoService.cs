@@ -1,5 +1,5 @@
 ﻿using Domain;
-using Infrastructure;
+using Application.Contracts.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +17,7 @@ namespace Application.Services
             _pedidoRepository = pedidoRepository;
         }
 
-        public List<Pedido> GetPedidoList()
+        public IReadOnlyList<Pedido> GetPedidoList()
         {
             return _pedidoRepository.GetAll();
         }
@@ -30,7 +30,7 @@ namespace Application.Services
 
         public Pedido CreatePedido(Pedido pedido)
         {
-            var result = _pedidoRepository.Create(pedido);
+            var result = _pedidoRepository.Add(pedido);
             return result;
         }
 

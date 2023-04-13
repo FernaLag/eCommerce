@@ -1,5 +1,5 @@
 ﻿using Domain;
-using Infrastructure;
+using Application.Contracts.Persistence;
 
 namespace Application.Validations
 {
@@ -11,7 +11,7 @@ namespace Application.Validations
         {
             _clienteRepository = clienteRepository;
         }
-        public List<Cliente> GetClienteList()
+        public IReadOnlyList<Cliente> GetClienteList()
         {
             return _clienteRepository.GetAll();
         }
@@ -22,7 +22,7 @@ namespace Application.Validations
         }
         public Cliente CreateCliente(Cliente cliente)
         {
-            var result = _clienteRepository.Create(cliente);
+            var result = _clienteRepository.Add(cliente);
             return result;
         }
         public void UpdateCliente(Cliente cliente)
