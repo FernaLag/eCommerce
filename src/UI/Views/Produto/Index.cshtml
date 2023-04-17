@@ -1,10 +1,60 @@
 ﻿
 @{
-    ViewData["Produto"] = "Index";
+    ViewData["Produto"] = "Produto";
 }
 
-<h1>Produto Index</h1
-<h1>Produtos:</h1>
-<ul>
-    <li>Camiseta</li>
-</ul>
+<a class="nav-link text-dark" asp-area="" style="font-size:25px" asp-controller="Produto" asp-action="Create">Cadastrar novo produto</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Tamanho</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Quantidade Disponivel</th>
+            <th scope="col">Material</th>
+            <th scope="col">Cor</th>
+        </tr>
+    </thead>
+   <tbody>
+        <tr>
+            <td>Camiseta</td>
+            <td>G</td>
+            <td>99,99</td>
+            <td>10</td>
+            <td>Algodão</td>
+            <td>Azul</td>
+            <td>
+                <a class="nav-link text-dark" asp-area="" style="font-size:12px" asp-controller="Produto" asp-action="Edit">Editar</a>
+                <a class="nav-link text-dark" asp-area="" style="font-size:12px" asp-controller="Produto" asp-action="Delete">Excluir</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Regata</td>
+            <td>G</td>
+            <td>49,99</td>
+            <td>10</td>
+            <td>Algodão doce</td>
+            <td>Preto</td>
+            <td>
+                <a class="nav-link text-dark" asp-area="" style="font-size:12px" asp-controller="Produto" asp-action="Edit">Editar</a>
+                <a class="nav-link text-dark" asp-area="" style="font-size:12px" asp-controller="Produto" asp-action="Delete">Excluir</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Shorts</td>
+            <td>G</td>
+            <td>139,99</td>
+            <td>10</td>
+            <td>Algodão preto</td>
+            <td>Rosa</td>
+            <td>
+                <a class="nav-link text-dark" asp-area="" style="font-size:12px" asp-controller="Produto" asp-action="Edit">Editar</a>
+                <a class="nav-link text-dark" asp-area="" style="font-size:12px" asp-controller="Produto" asp-action="Delete">Excluir</a>
+            </td>
+        </tr>
+
+   </tbody>
+
+</table>
+
