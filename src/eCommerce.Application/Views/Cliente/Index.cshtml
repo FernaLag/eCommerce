@@ -9,88 +9,100 @@
 <h1>Tabela de Clientes</h1>
   
  
-<table border="1">
-    
-   
-<tr>
-      
-     
-<th>ID</th>
-      
-     
-<th>Nome</th>
-      
-     
-<th>Email</th>
-      
-     
-<th>Telefone</th>
-    
-   
-</tr>
-    
-   
-<tr>
-      
-     
-<td>1</td>
-      
-     
-<td>Cliente 1</td>
-      
-     
-<td>cliente1@example.com</td>
-      
-      
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Clientes</th>
+            <th scope="col">ID</th>
+            <th scope="col">Email</th>
+            <th scope="col">Opções</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Pedro</td>
+            <td>##########</td>
+            <td>pedro@gmail.com</td>
+            <td>
+                <button>
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                </button>
+                <button>
+                    <span class="material-symbols-outlined">
+                        edit
+                    </span>
+                </button>
+            </td>
+            <td>
+                
+            </td>
 
-     
-<td>(11) 98765-4321</td>
-    
-   
-</tr>
-    
-   
-<tr>
-      
-     
-<td>2</td>
-      
-     
-<td>Cliente 2</td>
-      
-     
-<td>cliente2@example.com</td>
-      
-      
-
-     
-<td>(22) 98765-4321</td>
-    
-   
-</tr>
-    
-   
-<tr>
-      
-     
-<td>3</td>
-      
-     
-<td>Cliente 3</td>
-      
-     
-<td>cliente3@example.com</td>
-      
-      
-
-     
-<td>(33) 98765-4321</td>
-    
-   
-</tr>
-  
- 
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Gabe</td>
+            <td>##########</td>
+            <td>gabe@gmail.com</td>
+            <td>
+                <button>
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                </button>
+                <button>
+                    <span class="material-symbols-outlined">
+                        edit
+                    </span>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Ferna</td>
+            <td>##########</td>
+            <td>ferna@gmail.com</td>
+            <td>
+                <button>
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                </button>
+                <button>
+                    <span class="material-symbols-outlined">
+                        edit
+                    </span>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Xande</td>
+            <td>##########</td>
+            <td>xande@gmail.com</td>
+            <td>
+                <button>
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                </button>
+                <button>
+                    <a class="nav-link text-dark" asp-area=""  asp-controller="Cliente" asp-action="Edit">
+                        <span class="material-symbols-outlined">
+                            edit
+                        </span>
+                    </a>
+                   
+                   
+                </button>
+            </td>
+        </tr>
+    </tbody>
 </table>
+
 
 
 
