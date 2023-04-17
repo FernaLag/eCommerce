@@ -1,9 +1,10 @@
 ﻿using eCommerce.Core.Contracts.Persistence;
+using eCommerce.Domain.Common;
 using Microsoft.EntityFrameworkCore;
 
 namespace eCommerce.Persistence.Repositories
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : class, IBaseDomainEntity
     {
         private readonly ECommerceDbContext _dbContext;
 
@@ -20,11 +21,10 @@ namespace eCommerce.Persistence.Repositories
 
         public bool Exists(int id)
         {
-            var entity = Get(id);
-            return entity != null;
+            return _dbContext.Set<T>().Any(e => e.Id == id);
         }
 
-        public T Get(int id)
+        public T? Get(int id)
         {
             return _dbContext.Set<T>().Find(id);
         }

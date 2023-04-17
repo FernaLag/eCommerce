@@ -1,6 +1,10 @@
 ﻿namespace eCommerce.Domain.Common
 {
-    public class BaseDomainEntity
+    public interface IBaseDomainEntity
+    {
+        int Id { get; set; }
+    }
+    public class BaseDomainEntity : IBaseDomainEntity
     {
         public int Id { get; set; }
         public DateTime CriadoEm { get; set; }
