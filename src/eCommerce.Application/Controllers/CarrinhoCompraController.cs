@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace UI.Controllers
+namespace eCommerce.Application.Controllers
 {
     public class CarrinhoCompraController : Controller
     {
