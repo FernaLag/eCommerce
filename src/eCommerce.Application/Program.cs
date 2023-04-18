@@ -5,6 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
 
 builder.Services.AddScoped<ClienteService>();
+builder.Services.AddScoped<ProdutoService>();
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

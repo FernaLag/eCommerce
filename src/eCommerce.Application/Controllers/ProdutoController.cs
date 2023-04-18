@@ -1,14 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using eCommerce.Core.Services;
+using eCommerce.Domain;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;
 
 namespace eCommerce.Application.Controllers
 {
     public class ProdutoController : Controller
     {
+        private readonly ProdutoService produtoService;
 
+        public ProdutoController(ProdutoService produtoService)
+        {
+            this.produtoService = produtoService;
+        }
         public ActionResult Index()
         {
-            return View();
+            var produtos = produtoService.GetProdutoList();
+            return View(produtos);
         }
 
         public ActionResult Create()
@@ -18,10 +26,11 @@ namespace eCommerce.Application.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Produto produto)
         {
             try
             {
+                produtoService.CreateProduto(produto);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -31,17 +40,19 @@ namespace eCommerce.Application.Controllers
         }
         public ActionResult Edit(int id)
         {
-            return View();
+            var produto = produtoService.GetProduto(id);
+            return View(produto);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public ActionResult Edit(IFormCollection collection, int id)
+        public ActionResult Edit(Produto produto)
         {
 
             try
             {
+                produtoService.UpdateProduto(produto);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -50,17 +61,16 @@ namespace eCommerce.Application.Controllers
             }
 
         }
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public ActionResult Delete(IFormCollection collection, int id)
+        public ActionResult Delete(int id)
         {
             try
             {
+                var produto = produtoService.GetProduto(id);
+                produtoService.DeleteProduto(produto);
                 return RedirectToAction(nameof(Index));
             }
             catch

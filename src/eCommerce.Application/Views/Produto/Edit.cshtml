@@ -1,5 +1,25 @@
-﻿
+﻿@model eCommerce.Domain.Produto
 @{
     ViewData["Teste"] = "Edit";
 }
 <h1>Produto Edit</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <label asp-for="Nome" class="control-label"></label>
+            <input asp-for="Nome" class="form-control" />
+
+            <label asp-for="Tamanho" class="control-label"></label>
+            <input asp-for="Tamanho" class="form-control" />
+
+            <input type="submit" value="Editar" class="btn btn-primary" />
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
