@@ -1,27 +1,30 @@
 ﻿@model IEnumerable<eCommerce.Domain.Cliente>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Clientes";
 }
 
-<h1>Index</h1>
+<h1>Clientes</h1>
 
 <p>
     <a asp-action="Create">Cadastrar novo Cliente</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Id)
+                Id
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NomeCompleto)
+                Nome Completo
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Idade)
+                Idade
             </th>
-            <th></th>
+            <th>
+                Opções
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -37,10 +40,12 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Idade)
                 </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                <td class="d-flex">
+                    <div>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                    </div>
                     <form asp-action="Delete" asp-route-id="@item.Id" method="post">
-                        <button type="submit" class="btn btn-link" onclick="return confirm('Certezaαaα que vai excluir esse clientinho??')">
+                        <button type="submit" class="btn btn-link" onclick="return confirm('Deseja realmente excluir esse cliente?')">
                             <span class="material-symbols-outlined">
                                 delete
                             </span>
