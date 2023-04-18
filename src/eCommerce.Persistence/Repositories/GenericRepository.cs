@@ -6,42 +6,45 @@ namespace eCommerce.Persistence.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class, IBaseDomainEntity
     {
-        private readonly ECommerceDbContext _dbContext;
+        private readonly ECommerceDbContext dbContext;
 
         public GenericRepository(ECommerceDbContext dbContext)
         {
-            _dbContext = dbContext;
+            this.dbContext = dbContext;
         }
 
         public T Add(T entity)
         {
-            _dbContext.Add(entity);
+            dbContext.Add(entity);
+            dbContext.SaveChanges();
             return entity;
         }
 
         public bool Exists(int id)
         {
-            return _dbContext.Set<T>().Any(e => e.Id == id);
+            return dbContext.Set<T>().Any(e => e.Id == id);
         }
 
         public T? Get(int id)
         {
-            return _dbContext.Set<T>().Find(id);
+            return dbContext.Set<T>().Find(id);
         }
 
         public IReadOnlyList<T> GetAll()
         {
-            return _dbContext.Set<T>().ToList();
+            return dbContext.Set<T>().ToList();
         }
 
         public void Update(T entity)
         {
-            _dbContext.Entry(entity).State = EntityState.Modified;
+            dbContext.Entry(entity).State = EntityState.Modified;
+            dbContext.SaveChanges();
         }
 
         public void Delete(T entity)
         {
-            _dbContext.Set<T>().Remove(entity);
+            dbContext.Set<T>().Remove(entity);
+            dbContext.SaveChanges();
         }
     }
 }

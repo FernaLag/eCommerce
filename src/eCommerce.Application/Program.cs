@@ -1,7 +1,10 @@
+using eCommerce.Core.Services;
 using eCommerce.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
+
+builder.Services.AddScoped<ClienteService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

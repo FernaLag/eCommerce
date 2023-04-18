@@ -1,106 +1,53 @@
-﻿
+﻿@model IEnumerable<eCommerce.Domain.Cliente>
+
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Tabela de Clientes</h1>
-  
- 
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Cadastrar novo Cliente</a>
+</p>
 <table class="table">
-    <thead class="thead-dark">
+    <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Clientes</th>
-            <th scope="col">ID</th>
-            <th scope="col">Email</th>
-            <th scope="col">Opções</th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeCompleto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Idade)
+            </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Pedro</td>
-            <td>##########</td>
-            <td>pedro@gmail.com</td>
-            <td>
-                <button>
-                    <span class="material-symbols-outlined">
-                        delete
-                    </span>
-                </button>
-                <button>
-                    <span class="material-symbols-outlined">
-                        edit
-                    </span>
-                </button>
-            </td>
-            <td>
-                
-            </td>
-
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Gabe</td>
-            <td>##########</td>
-            <td>gabe@gmail.com</td>
-            <td>
-                <button>
-                    <span class="material-symbols-outlined">
-                        delete
-                    </span>
-                </button>
-                <button>
-                    <span class="material-symbols-outlined">
-                        edit
-                    </span>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Ferna</td>
-            <td>##########</td>
-            <td>ferna@gmail.com</td>
-            <td>
-                <button>
-                    <span class="material-symbols-outlined">
-                        delete
-                    </span>
-                </button>
-                <button>
-                    <span class="material-symbols-outlined">
-                        edit
-                    </span>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Xande</td>
-            <td>##########</td>
-            <td>xande@gmail.com</td>
-            <td>
-                <button>
-                    <span class="material-symbols-outlined">
-                        delete
-                    </span>
-                </button>
-                <button>
-                    <a class="nav-link text-dark" asp-area=""  asp-controller="Cliente" asp-action="Edit">
-                        <span class="material-symbols-outlined">
-                            edit
-                        </span>
-                    </a>
-                   
-                   
-                </button>
-            </td>
-        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeCompleto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Idade)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    <form asp-action="Delete" asp-route-id="@item.Id" method="post">
+                        <button type="submit" class="btn btn-link" onclick="return confirm('Certezaαaα que vai excluir esse clientinho??')">
+                            <span class="material-symbols-outlined">
+                                delete
+                            </span>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
-
-
-
-
-
