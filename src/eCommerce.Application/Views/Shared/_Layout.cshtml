@@ -24,12 +24,9 @@
                     <a class="navbar-brand" asp-controller="Home" asp-action="Index">eCommerce</a>
 
                     <ul class="navbar-nav d-flex">                        
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Produto" asp-action="Index">Produtos</a>
+                        <li class="nav-item" id="criar-conta">
+                            <a class="nav-link text-dark" asp-controller="Cliente" asp-action="Create">Criar Conta</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Cliente" asp-action="Index">Clientes</a>
-                        </li>                       
                     </ul>
 
                     <a class="nav-link text-dark" asp-controller="CarrinhoCompra" asp-action="Index">
@@ -37,6 +34,7 @@
                             add_shopping_cart
                         </span>
                     </a>
+                    
                 </div>
             </div>
         </nav>
