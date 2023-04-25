@@ -1,9 +1,9 @@
-﻿
+﻿@model IEnumerable<eCommerce.Domain.Produto>
 @{
     ViewData["Produto"] = "Produto";
 }
 
-<a class="nav-link text-dark" asp-area="" style="font-size:25px" asp-controller="Produto" asp-action="Create">Cadastrar novo produto</a>
+<a class="nav-link text-dark" style="font-size:25px" asp-action="Create">Cadastrar novo produto</a>
 
 <table class="table">
     <thead>
@@ -18,42 +18,23 @@
         </tr>
     </thead>
    <tbody>
-        <tr>
-            <td>Camiseta</td>
-            <td>G</td>
-            <td>99,99</td>
-            <td>10</td>
-            <td>Algodão</td>
-            <td>Azul</td>
-            <td style="display:flex">
-                <a class="nav-link text-dark" asp-area="" style="font-size:20px" asp-controller="Produto" asp-action="Edit"><i class="bi bi-pencil-square"></i></a>
-                <a class="nav-link text-dark" asp-area="" style="font-size:20px" asp-controller="Produto" asp-action="Delete"><i class="bi bi-x-square"></i></a>
-            </td>
-        </tr>
-        <tr>
-            <td>Regata</td>
-            <td>G</td>
-            <td>49,99</td>
-            <td>10</td>
-            <td>Algodão doce</td>
-            <td>Preto</td>
-            <td style="display:flex">
-                <a class="nav-link text-dark" asp-area="" style="font-size:20px" asp-controller="Produto" asp-action="Edit"><i class="bi bi-pencil-square"></i></a>
-                <a class="nav-link text-dark" asp-area="" style="font-size:20px" asp-controller="Produto" asp-action="Delete"><i class="bi bi-x-square"></i></a>
-            </td>
-        </tr>
-        <tr>
-            <td>Shorts</td>
-            <td>G</td>
-            <td>139,99</td>
-            <td>10</td>
-            <td>Algodão preto</td>
-            <td>Rosa</td>
-            <td style="display:flex">
-                <a class="nav-link text-dark" asp-area="" style="font-size:20px" asp-controller="Produto" asp-action="Edit"><i class="bi bi-pencil-square"></i></a>
-                <a class="nav-link text-dark" asp-area="" style="font-size:20px" asp-controller="Produto" asp-action="Delete"><i class="bi bi-x-square"></i></a>
-            </td>
-        </tr>
+       @foreach (var produto in Model)
+        {
+            <tr>
+                <td>@produto.Nome</td>
+                <td>@produto.Tamanho</td>
+                <td>@produto.Preco</td>
+                <td>@produto.QuantidadeDisponivel</td>
+                <td>@produto.Material</td>
+                <td>@produto.Cor</td>
+                <td style="display:flex">
+                    <button class="nav-link text-dark" style="font-size:20px" asp-action="Edit" asp-route-id="@produto.Id"><i class="bi bi-pencil-square"></i></button>
+                    <form asp-action="Delete" asp-route-id="@produto.Id" method="post">
+                        <button type="submit" onclick="return confirm('Deseja realmente excluir esse produto?')" class="nav-link text-dark" style="font-size:20px"><i class="bi bi-x-square"></i></button>
+                    </form>
+                </td>
+            </tr>
+        }
 
    </tbody>
 

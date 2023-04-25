@@ -18,6 +18,8 @@ namespace eCommerce.Persistence
 
             services.AddScoped<IClienteRepository, ClienteRepository>();
 
+            services.AddScoped<IProdutoRepository, ProdutoRepository>();
+
             return services;
         }
     }
