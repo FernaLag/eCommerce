@@ -1,47 +1,36 @@
-﻿@{
+﻿
+
+@{
     ViewData["Title"] = "Index";
 }
 <a class="nav-link text-dark" asp-area="" asp-controller="CarrinhoCompra" asp-action="Create">Criar carrinho</a>
 <h1>Carrinho de Compras</h1>
 <body>
-    <table>
+    <table class="table">
         <thead>
             <tr>
-                <th>
-                    Comprador
-                </th>
-                <th>
-                    Produto
-                </th>
-                <th>
-                    Preço
-                </th>
-                <th>
-                    Categoria
-                </th>
+                <th scope="col">Comprador</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Preço</th>
             </tr>
         </thead>
-        
-        <thead>
-            <tr>
-                <td>
-                    Jorgefina
-                </td>
-
-                <td>
-                    Garrafa
-                </td>
-
-                <td>
-                    R$30,00
-                </td>
-
-                <td>
-                    Ultilidades
-                </td>
-            </tr>
-        </thead>
-     
-
+        <tbody>
+            
+                <tr>
+                    <td>Josivalda</td>
+                    <td>Garrafa</td>
+                    <td>R$30,00</td>
+                </tr>
+                <tr>
+                    <td>Jacob</td>
+                    <td>Pendrive de morango</td>
+                    <td>R$800,00</td>
+                </tr>
+                <tr>
+                    <td>Marquin</td>
+                    <td>Computador</td>
+                    <td>R$00,27</td>
+                </tr>
+        </tbody>
     </table>
 </body>
