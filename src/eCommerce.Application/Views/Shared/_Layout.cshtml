@@ -16,31 +16,27 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">UI</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-flex justify-content-center">
-                    <ul class="navbar-nav flex-grow-3 d-flex">
+                <div class="navbar-collapse collapse d-flex justify-content-between">
+                    <a class="navbar-brand" asp-controller="Home" asp-action="Index">eCommerce</a>
+
+                    <ul class="navbar-nav d-flex">                        
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-controller="Produto" asp-action="Index">Produtos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Produto" asp-action="Index">Produtos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cliente" asp-action="Index">Clientes</a>
-                        </li>
-                        <li class="nav-item text-dark">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="CarrinhoCompra" asp-action="Index">
-                                <span class="material-symbols-outlined">
-                                    add_shopping_cart
-                                </span>
-                            </a>
-                        </li>
-                       
+                            <a class="nav-link text-dark" asp-controller="Cliente" asp-action="Index">Clientes</a>
+                        </li>                       
                     </ul>
+
+                    <a class="nav-link text-dark" asp-controller="CarrinhoCompra" asp-action="Index">
+                        <span class="material-symbols-outlined">
+                            add_shopping_cart
+                        </span>
+                    </a>
                 </div>
             </div>
         </nav>
