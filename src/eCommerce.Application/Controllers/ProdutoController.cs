@@ -18,6 +18,8 @@ namespace eCommerce.Application.Controllers
             var produtos = produtoService.GetProdutoList();
             return View(produtos);
         }
+
+        [HttpGet]
         public ActionResult Detail()
         {
             var produto = produtoService.GetProduto(1);
