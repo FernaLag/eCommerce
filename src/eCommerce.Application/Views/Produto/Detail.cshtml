@@ -5,16 +5,67 @@
 }
 
 <div id="box">
-    <div id="title">
-        <h1>Nome do Produto</h1>
-    </div>
     <div id="img">
-
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="..." class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </div>
-    <div id="desricao">
-        <div id="valor">
+
+    <div id="pagamento">
+        <div id="descricao">
+            <h1>Nome Produto</h1>
+            <span id="preco">R$629</span><br>
+            <span><strong>Cor:</strong></span>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Cores Disponiveis</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            <span><strong>Tamanho:</strong></span>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Tamanhos Disponiveis</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            <span><strong>Quantidade:</strong></span>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Quanntidades Disponiveis</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
 
         </div>
-       
+        <div id="btns">
+            <button id="comprar">Comprar Agora</button>
+            <button id="add-carrinho">Adicionar ao Carrinho</button>
+        </div>
+
     </div>
+
 </div>
