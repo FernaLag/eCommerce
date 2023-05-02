@@ -1,0 +1,39 @@
+﻿@model IEnumerable<eCommerce.Domain.Cliente>
+
+<div align="center" class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+<form style="width:300px">
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <input placeholder="Email" type="email" id="form2Example1" class="form-control" />
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+        <input placeholder="Password" type="password" id="form2Example2" class="form-control" />
+    </div>
+
+    <!-- 2 column grid layout for inline styling -->
+    <div class="row mb-8">
+        <div class="col d-flex justify-content-center">
+            <!-- Checkbox -->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                <label class="form-check-label" for="form2Example31">Lembrar</label>
+            </div>
+        </div>
+
+        <div class="col">
+            <!-- Simple link -->
+            <a href="#!">Esqueceu a senha?</a>
+        </div>
+    </div>
+
+    <!-- Submit button -->
+    <button type="button" style="width:100%;margin-top:15px" class="btn btn-primary btn-block mb-4">Entrar</button>
+
+    <!-- Register buttons -->
+    <div class="text-center">
+            <a asp-controller="Cliente" asp-action="Create">Registrar</a>
+    </div>
+</form>
+</div>

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using eCommerce.Application.Models;
+using eCommerce.Core.Services;
 
 namespace eCommerce.Application.Controllers
 {
@@ -8,17 +9,26 @@ namespace eCommerce.Application.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ProdutoService _produtoService;
+
+        public HomeController(ILogger<HomeController> logger, ProdutoService produtoService)
         {
             _logger = logger;
+            _produtoService = produtoService;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var produtos = _produtoService.GetProdutoList();
+            return View(produtos);
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult Login()
         {
             return View();
         }
