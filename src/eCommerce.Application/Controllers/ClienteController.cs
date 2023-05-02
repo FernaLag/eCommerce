@@ -33,7 +33,7 @@ namespace eCommerce.Application.Controllers
             try
             {
                 clienteService.CreateCliente(cliente);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Login","Home");
             }
             catch
             {
