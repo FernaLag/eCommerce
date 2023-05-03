@@ -1,7 +1,8 @@
 ﻿@model IEnumerable<eCommerce.Domain.Cliente>
 
 <div align="center" class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-<form style="width:300px">
+    <form style="width:300px;height: 400px">
+        <h5>Login:</h5>
     <!-- Email input -->
     <div class="form-outline mb-4">
         <input placeholder="Email" type="email" id="form2Example1" class="form-control" />
@@ -24,7 +25,7 @@
 
         <div class="col">
             <!-- Simple link -->
-            <a href="#!">Esqueceu a senha?</a>
+                <a asp-controller="Home" asp-action="ForgetPassword">Esqueceu a senha?</a>
         </div>
     </div>
 

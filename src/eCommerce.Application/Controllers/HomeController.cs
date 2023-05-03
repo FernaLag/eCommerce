@@ -28,6 +28,10 @@ namespace eCommerce.Application.Controllers
             return View();
         }
 
+        public IActionResult ForgetPassword()
+        {
+            return View();
+        }
         public IActionResult Login()
         {
             return View();
