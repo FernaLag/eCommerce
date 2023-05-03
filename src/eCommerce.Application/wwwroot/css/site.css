@@ -47,7 +47,7 @@ body {
 #img {
     width: 800px;
     height: 480px;
-    border: 1px solid black;
+
 }
 
 
@@ -109,4 +109,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#ds {
+    margin-top:15px;
 }
