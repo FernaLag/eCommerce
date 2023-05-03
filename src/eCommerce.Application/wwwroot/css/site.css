@@ -25,13 +25,29 @@ body {
     padding-left:950px;
 }
 
-
-
-#rodape {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+#pesquisa-produto{
+    width:200px;
+    display:flex;
 }
+
+#botao-pesquisa{
+    height:none;
+    background-color:white;
+    color:none;
+    border:none;
+    text-decoration:none;
+}
+
+#pesquisa-produto, input {
+    width: 240px;
+}
+
+
+    #rodape {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
 
 #box {
     width: 1200px;
