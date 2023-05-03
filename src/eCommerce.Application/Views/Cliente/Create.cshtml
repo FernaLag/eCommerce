@@ -4,7 +4,68 @@
     ViewData["Title"] = "Cadastrar";
 }
 
-<h1>Cadastrar Cliente</h1>
+<div align="center" class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <form style="width:300px; height: 800px" asp-action="Create">
+        <h4>Criar nova conta</h4>
+        <div class="form-outline mb-4">
+            <input asp-for="NomeCompleto" placeholder="Nome Completo" type="text" id="form2Example1" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+            <input asp-for="Idade" placeholder="Idade" type="number" id="form2Example2" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+            <input asp-for="DataNascimento" placeholder="Data de Nascimento" type="date" id="form2Example2" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+            <input asp-for="CPF" placeholder="CPF" type="number" id="form2Example2" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+            <input asp-for="Email" placeholder="Email" type="email" id="form2Example2" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+            <input asp-for="Endereco" placeholder="Endereço" type="text" id="form2Example2" class="form-control" />
+        </div>
+
+        <button type="submit" style="width:100%;margin-top:15px" class="btn btn-primary btn-block mb-4">Registrar</button>
+
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<h1>Cadastrar Cliente</h1>
 
 <hr />
 
@@ -25,4 +86,4 @@
 
 <div>
     <a asp-action="Index">Voltar</a>
-</div>
+</div>*@
