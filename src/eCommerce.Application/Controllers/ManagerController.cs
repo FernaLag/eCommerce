@@ -6,38 +6,18 @@ using eCommerce.Domain;
 
 namespace eCommerce.Application.Controllers
 {
-    public class HomeController : Controller
+    public class ManagerController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<ManagerController> _logger;
 
         private readonly ProdutoService _produtoService;
 
-        public HomeController(ILogger<HomeController> logger, ProdutoService produtoService)
+        public ManagerController(ILogger<ManagerController> logger, ProdutoService produtoService)
         {
             _logger = logger;
             _produtoService = produtoService;
         }
-
-        public IActionResult Index(string nome)
-        {
-            var produtos = _produtoService.GetProdutoList(nome);
-            return View(produtos);
-        }
-
         public IActionResult Manager()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-        public IActionResult ForgetPassword()
-        {
-            return View();
-        }
-        public IActionResult Login()
         {
             return View();
         }
