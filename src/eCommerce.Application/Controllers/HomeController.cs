@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using eCommerce.Application.Models;
 using eCommerce.Core.Services;
+using eCommerce.Domain;
 
 namespace eCommerce.Application.Controllers
 {
@@ -31,6 +32,16 @@ namespace eCommerce.Application.Controllers
         public IActionResult ForgetPassword()
         {
             return View();
+        }
+        public IActionResult ProductFilter(string nome)
+        {
+            var produtos = _produtoService.GetProdutoList();
+
+            if (!string.IsNullOrEmpty(nome))
+            {
+                produtos = produtos.Where(p => p.Nome.Contains(nome)).ToList();
+            }
+            return View(produtos);
         }
         public IActionResult Login()
         {
