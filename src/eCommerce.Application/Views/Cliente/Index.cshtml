@@ -1,5 +1,25 @@
 ﻿@model IEnumerable<eCommerce.Domain.Cliente>
 
-@{
-    ViewData["Title"] = "Clientes";
-}
+<body>
+    <table class="table">
+        <tbody>
+            @foreach (var cliente in Model)
+            {
+                <tr>
+                    <td>@cliente.NomeCompleto</td>
+                    <td>@cliente.Id</td>
+                    <td>@cliente.Idade</td>
+                    <td>@cliente.CPF</td>
+                    <td>@cliente.DataNascimento</td>
+                    <td>@cliente.Endereco</td>
+                    <td>@cliente.Email</td>
+                    <td style="width:1px"><a class="text-dark" asp-controller="Cliente" asp-action="Edit" id="botao-pesquisa" type="submit"><i class="bi bi-pencil-square"></i></a></td>
+                    <td style="width:1px"><a class="text-dark" asp-controller="Cliente" asp-action="Create" id="botao-pesquisa" type="submit"><i class="bi bi-plus-square"></i></a></td>
+                    <form asp-action="Delete" asp-route-id="@cliente.Id" method="post">
+                    <td style="width:1px"><a class="text-dark" onclick="return confirm('Deseja realmente excluir esse produto?')" id="botao-pesquisa" type="submit"><i class="bi bi-x-square"></i></a></td>
+                    </form>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

@@ -15,7 +15,13 @@ namespace eCommerce.Core.Services
             var produto = _produtoRepository.Get(id);
             return produto;
         }
-        public IReadOnlyList<Produto> GetProdutoList(string nome)
+        public IReadOnlyList<Produto> GetProdutoList()
+        {
+            var produtos = _produtoRepository.GetAll();
+            return produtos;
+
+        }
+        public IReadOnlyList<Produto> GetFilteredProdutoList(string nome)
         {
             var produtos = _produtoRepository.GetAll();
             if (!string.IsNullOrEmpty(nome))
@@ -23,6 +29,7 @@ namespace eCommerce.Core.Services
                 produtos = produtos.Where(p => p.Nome.Contains(nome)).ToList();
             }
             return produtos;
+
         }
         public void UpdateProduto(Produto produto)
         {

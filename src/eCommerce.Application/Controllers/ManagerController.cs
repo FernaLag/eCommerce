@@ -18,7 +18,7 @@ namespace eCommerce.Application.Controllers
             _produtoService = produtoService;
         }
         public IActionResult Manager()
-        {
+        { 
             return View();
         }
 

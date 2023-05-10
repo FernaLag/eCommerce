@@ -20,13 +20,8 @@ namespace eCommerce.Application.Controllers
 
         public IActionResult Index(string nome)
         {
-            var produtos = _produtoService.GetProdutoList(nome);
+            var produtos = _produtoService.GetFilteredProdutoList(nome);
             return View(produtos);
-        }
-
-        public IActionResult Manager()
-        {
-            return View();
         }
 
         public IActionResult Privacy()

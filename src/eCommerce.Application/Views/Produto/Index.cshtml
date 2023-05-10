@@ -1,7 +1,31 @@
 ﻿@model IEnumerable<eCommerce.Domain.Produto>
-@{
-    ViewData["Produto"] = "Produto";
+
+<body>
+    <table class="table">
+        <tbody>
+        @foreach (var produto in Model) 
+{
+             <tr>
+                    <td>@produto.Nome</td>
+                    <td>@produto.Preco</td>
+                    <td>@produto.Cor</td>
+                    <td>@produto.Tamanho</td>
+                    <td>@produto.Material</td>
+                    <td>@produto.QuantidadeDisponivel</td>
+                    <td style="width:1px"><a class="text-dark" asp-controller="Produto" asp-action="Edit" id="botao-pesquisa" type="submit"><i class="bi bi-pencil-square"></i></a></td>
+                    <td style="width:1px"><a class="text-dark" asp-controller="Produto" asp-action="Create" id="botao-pesquisa" type="submit"><i class="bi bi-plus-square"></i></a></td>
+                    <form asp-action="Delete" asp-route-id="@produto.Id" method="post">
+                    <td style="width:1px"><a class="text-dark" onclick="return confirm('Deseja realmente excluir esse produto?')"  id="botao-pesquisa" type="submit"><i class="bi bi-x-square"></i></a></td>
+                    </form>
+            </tr>
 }
+        </tbody>
+    </table>
+</body>
+
+
+
+
 
 
 
@@ -41,4 +65,3 @@
    </tbody>
 
 </table>*@
-
