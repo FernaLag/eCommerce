@@ -1,8 +1,5 @@
 ﻿@model eCommerce.Domain.Cliente
 
-@{
-    ViewData["Title"] = "Cadastrar";
-}
 
 <div align="center" class="d-flex justify-content-center align-items-center" style="height: 100vh;">
     <form style="width:300px; height: 800px" asp-action="Create">
@@ -31,7 +28,7 @@
             <input asp-for="Endereco" placeholder="Endereço" type="text" id="form2Example2" class="form-control" />
         </div>
 
-        <button type="submit" style="width:100%;margin-top:15px" class="btn btn-primary btn-block mb-4">Registrar</button>
+        <button asp-action="Create" asp-controller="Cliente" asp-route-id="Id" type="submit" style="width:100%;margin-top:15px" class="btn btn-primary btn-block mb-4">Registrar</button>
 
     </form>
 </div>

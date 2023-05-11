@@ -56,19 +56,22 @@ namespace eCommerce.Application.Controllers
 
         public ActionResult Edit(Produto produto)
         {
+          if (ModelState.IsValid)
+          {
 
             try
             {
                 produtoService.UpdateProduto(produto);
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                    ModelState.AddModelError(string.Empty, "Ocorreu um erro ao tentar atualizar o produto: " + ex.Message);
             }
-
+          }
+            return View();  
         }
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
 

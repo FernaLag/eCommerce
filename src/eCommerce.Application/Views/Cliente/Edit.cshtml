@@ -1,6 +1,65 @@
 ﻿@model eCommerce.Domain.Cliente
 
-@{
+<div align="center" class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <form asp-action="Edit" method="post" style="width:300px; height: 800px">
+        <h4>Editar conta</h4>
+        <div class="form-outline mb-4">
+
+            <div class="form-outline mb-4">
+            <input type="hidden" asp-for="Id" />
+            </div>
+
+            <div class ="form-outline mb-4">
+            <input asp-for="NomeCompleto" class="form-control" placeholder="Nome Completo" />
+            </div>
+
+            <div class="form-outline mb-4">
+            <input asp-for="Id" class="form-control" placeholder="Id" />
+            </div>
+
+            <div class="form-outline mb-4">
+            <input asp-for="Idade" class="form-control" placeholder="Idade" />
+            </div>
+
+            <div class="form-outline mb-4">
+            <input asp-for="CPF" class="form-control" placeholder="CPF" />
+            </div>
+
+            <div class="form-outline mb-4">
+            <input asp-for="DataNascimento" class="form-control" placeholder="Data de Nascimento" />
+            </div>
+
+            <div class="form-outline mb-4">
+            <input asp-for="Endereco" class="form-control" placeholder="Endereço" />
+            </div>
+
+            <div class="form-outline mb-4">
+            <input asp-for="Email" class="form-control" placeholder="Email" />
+            </div>
+
+        </div>
+
+        <div>
+            <button type="submit" style="width:100%;margin-top:15px" class="btn btn-primary btn-block mb-4">Editar</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@{
     ViewData["Title"] = "Editar";
 }
 
@@ -30,4 +89,4 @@
 
 <div>
     <a asp-action="Index">Voltar</a>
-</div>
+</div>*@

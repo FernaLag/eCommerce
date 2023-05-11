@@ -1,5 +1,50 @@
 ﻿@model eCommerce.Domain.Produto
-@{
+
+<div align="center" class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <form style="width:300px; height: 800px" asp-action="Create">
+        <h4>Criar produto</h4>
+        <div class="form-outline mb-4">
+            <input asp-for="Nome" placeholder="Nome" type="text" id="form2Example1" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+            <input asp-for="Preco" placeholder="Preço" type="number" id="form2Example2" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+            <input asp-for="Cor" placeholder="Cor" type="text" id="form2Example2" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+            <input asp-for="Tamanho" placeholder="Tamanho" type="text" id="form2Example2" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+            <input asp-for="Material" placeholder="Material" type="text" id="form2Example2" class="form-control" />
+        </div>
+
+        <div class="form-outline mb-4">
+            <input asp-for="QuantidadeDisponivel" placeholder="Quantidade Disponivel" type="number" id="form2Example2" class="form-control" />
+        </div>
+
+        <button asp-action="Create" asp-controller="Produto" asp-route-id="Id" type="submit" style="width:100%;margin-top:15px" class="btn btn-primary btn-block mb-4">Criar produto</button>
+
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@{
     ViewData["Teste"] = "Create";
 }
 <h1>Produto Create</h1>
@@ -34,4 +79,4 @@
 
 <div>
     <a asp-action="Index">Voltar</a>
-</div>
+</div>*@

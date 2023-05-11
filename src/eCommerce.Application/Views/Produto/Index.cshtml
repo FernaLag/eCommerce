@@ -1,5 +1,8 @@
 ﻿@model IEnumerable<eCommerce.Domain.Produto>
 
+    <div>
+    <a asp-action="Manager" asp-controller="Manager" type="submit" style="margin-top:15px" class="btn btn-primary btn-block mb-4">Manager</a>
+    </div>
 <body>
     <table class="table">
         <tbody>
@@ -7,15 +10,16 @@
 {
              <tr>
                     <td>@produto.Nome</td>
+                    <td>@produto.Id</td>
                     <td>@produto.Preco</td>
                     <td>@produto.Cor</td>
                     <td>@produto.Tamanho</td>
                     <td>@produto.Material</td>
                     <td>@produto.QuantidadeDisponivel</td>
-                    <td style="width:1px"><a class="text-dark" asp-controller="Produto" asp-action="Edit" id="botao-pesquisa" type="submit"><i class="bi bi-pencil-square"></i></a></td>
-                    <td style="width:1px"><a class="text-dark" asp-controller="Produto" asp-action="Create" id="botao-pesquisa" type="submit"><i class="bi bi-plus-square"></i></a></td>
+                    <td style="width:1px"><a class="text-dark" asp-controller="Produto" asp-route-id="@produto.Id" asp-action="Edit" id="botao-pesquisa" type="submit"><i class="bi bi-pencil-square"></i></a></td>
+                    <td style="width:1px"><a class="text-dark" asp-controller="Produto" asp-route-id="@produto.Id" asp-action="Create" id="botao-pesquisa" type="submit"><i class="bi bi-plus-square"></i></a></td>
                     <form asp-action="Delete" asp-route-id="@produto.Id" method="post">
-                    <td style="width:1px"><a class="text-dark" onclick="return confirm('Deseja realmente excluir esse produto?')"  id="botao-pesquisa" type="submit"><i class="bi bi-x-square"></i></a></td>
+                    <td style="width:1px"><button class="text-dark" onclick="return confirm('Deseja realmente excluir esse produto?')" id="botao-pesquisa" type="submit"><i class="bi bi-x-square"></i></button></td>
                     </form>
             </tr>
 }

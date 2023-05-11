@@ -1,12 +1,55 @@
 ﻿@model eCommerce.Domain.Produto
-@{
-    ViewData["Teste"] = "Edit";
-}
-<h1>Produto Edit</h1>
 
-<hr />
+<div align="center" class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <form asp-action="Edit" method="post" style="width:300px; height: 800px">
+        <h4>Editar produto</h4>
+    <div class="form-outline mb-4">
 
-<div class="row">
+            <div class="form-outline mb-4">
+            <input type="hidden" asp-for="Id"/>
+            </div>
+
+            <div class="form-outline mb-4">
+            <input asp-for="Nome" class="form-control" placeholder="Nome"/>
+            </div>
+
+            <div class="form-outline mb-4">
+            <input asp-for="Id" class="form-control" placeholder="Id" />
+            </div>
+
+            <div class="form-outline mb-4">
+            <input asp-for="Cor" class="form-control" placeholder="Cor" />
+            </div>
+
+            <div class="form-outline mb-4">
+            <input asp-for="QuantidadeDisponivel" class="form-control" placeholder="Quantidade Disponivel" />
+            </div>
+
+            <div class="form-outline mb-4">
+            <input asp-for="Material" class="form-control" placeholder="Material" />
+            </div>
+
+            <div class="form-outline mb-4">
+            <input asp-for="Preco" class="form-control" placeholder="Preço" />
+            </div>
+
+            <div class="form-outline mb-4">
+            <input asp-for="Tamanho" class="form-control" placeholder="Tamanho" />
+            </div>
+
+    </div>
+
+    <div>
+            <button type="submit" style="width:100%;margin-top:15px" class="btn btn-primary btn-block mb-4">Editar</button>
+    </div>
+    </form>
+</div>
+
+
+
+
+
+@*<div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <label asp-for="Nome" class="control-label"></label>
@@ -22,4 +65,4 @@
 
 <div>
     <a asp-action="Index">Voltar</a>
-</div>
+</div>*@

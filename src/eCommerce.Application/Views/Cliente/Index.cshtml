@@ -1,5 +1,8 @@
 ﻿@model IEnumerable<eCommerce.Domain.Cliente>
 
+<div>
+    <a asp-action="Manager" asp-controller="Manager" type="submit" style="margin-top:15px" class="btn btn-primary btn-block mb-4">Manager</a>
+</div>
 <body>
     <table class="table">
         <tbody>
@@ -13,10 +16,10 @@
                     <td>@cliente.DataNascimento</td>
                     <td>@cliente.Endereco</td>
                     <td>@cliente.Email</td>
-                    <td style="width:1px"><a class="text-dark" asp-controller="Cliente" asp-action="Edit" id="botao-pesquisa" type="submit"><i class="bi bi-pencil-square"></i></a></td>
-                    <td style="width:1px"><a class="text-dark" asp-controller="Cliente" asp-action="Create" id="botao-pesquisa" type="submit"><i class="bi bi-plus-square"></i></a></td>
+                    <td style="width:1px"><a class="text-dark" asp-controller="Cliente" asp-action="Edit" asp-route-id="@cliente.Id" id="botao-pesquisa" type="submit"><i class="bi bi-pencil-square"></i></a></td>
+                    <td style="width:1px"><a class="text-dark" asp-controller="Cliente" asp-action="Create" asp-route-id="@cliente.Id" id="botao-pesquisa" type="submit"><i class="bi bi-plus-square"></i></a></td>
                     <form asp-action="Delete" asp-route-id="@cliente.Id" method="post">
-                    <td style="width:1px"><a class="text-dark" onclick="return confirm('Deseja realmente excluir esse produto?')" id="botao-pesquisa" type="submit"><i class="bi bi-x-square"></i></a></td>
+                    <td style="width:1px"><button class="text-dark" onclick="return confirm('Deseja realmente excluir esse produto?')" id="botao-pesquisa" type="submit"><i class="bi bi-x-square"></i></button></td>
                     </form>
                 </tr>
             }
